@@ -1,6 +1,8 @@
 local M = {}
 
-local default_config = {
+local Current = {}
+
+M.default = {
   hl_groups = {
     {
       name = "TableauBackground",
@@ -15,7 +17,7 @@ local default_config = {
     {
       name = "TableauCurrentActive",
       fg = "#24273a",
-      bg = "#b690d6"
+      bg = "#b690d6",
     },
     {
       name = "TableauOtherInactive",
@@ -39,9 +41,11 @@ local default_config = {
 }
 
 M.current = function()
-  return default_config
+  return M.default
 end
 
--- Config = default_config
+M.load = function(config)
+  Current = config
+end
 
 return M

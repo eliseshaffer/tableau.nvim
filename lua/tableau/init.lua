@@ -5,11 +5,14 @@
 -- FIX: fix devicons integration
 -- TODO: Handle buffer clicks transitioning focus within a tab
 -- TODO: collapse init.lua filenames
+-- FIX: highlight for OtherActive not working
+-- FIX: highlight group defs on colorscheme change
 
 local devicons = require("nvim-web-devicons")
 local M = {}
 local utils = require('tableau.utils')
 local Tab = require('tableau.tab')
+local Config = require('tableau.config')
 
 local function set_tabline()
   local tabline = "%#TableauBackground#"
@@ -25,6 +28,7 @@ local function set_tabline()
 end
 
 M.setup = function(config)
+  Config.load(config)
   utils.create_highlight_groups()
   vim.o.tabline = "%!v:lua.render_tableau()"
 end
@@ -32,7 +36,5 @@ end
 function _G.render_tableau()
   return set_tabline()
 end
-
-M.setup({})
 
 return M
