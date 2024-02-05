@@ -8,7 +8,6 @@ An opinionated tabline plugin for Neovim
 > ⚠️ Tableau.nvim is very experimental. It currently doesn't have any configuration and the features and API are subject to frequent changes. 
 
 ## Installation
----
 Using lazy:
 ```lua
   {
