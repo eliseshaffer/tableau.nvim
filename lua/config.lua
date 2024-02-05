@@ -29,7 +29,6 @@ local default_config = {
     },
   },
   hidden_buffer_types = {
-    -- "neo-tree",
     "NeogitStatus",
     "NeogitPopup",
     "NeogitCommitMessage",
