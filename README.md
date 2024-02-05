@@ -31,4 +31,4 @@ Using lazy:
 ```
 
 ## Contributing
-While in development, pull requests will only be accepted from contributors. 
+At this early stage of development, pull requests are only being accepted from contributors
