@@ -9,9 +9,9 @@
 
 local devicons = require("nvim-web-devicons")
 local M = {}
-local utils = require('tableau.utils')
 local Tab = require('tableau.tab')
 local Config = require('tableau.config')
+local utils = require('tableau.utils')
 
 local function set_tabline()
   local tabline = "%#TableauBackground#"
@@ -28,7 +28,7 @@ end
 
 M.setup = function(config)
   Config.load(config)
-  utils.create_highlight_groups()
+  utils.create_highlight_groups(Config.current().hl_groups)
   vim.o.tabline = "%!v:lua.render_tableau()"
 end
 

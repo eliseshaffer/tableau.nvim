@@ -1,8 +1,8 @@
-local Config = require('tableau.config').current()
+local Config = require('tableau.config')
 local utils = {}
 
 utils.has_key = function(ft, buftype)
-  for _, type in ipairs(Config.hidden_buffer_types) do
+  for _, type in pairs(Config.current().hidden_buffer_types) do
     if type == ft or type == buftype then
       return true
     end
@@ -18,8 +18,8 @@ utils.render_icon = function(bufname)
   return "%#" .. hl .. "#" .. icon
 end
 
-utils.create_highlight_groups = function()
-  for _, hl in ipairs(Config.hl_groups) do
+utils.create_highlight_groups = function(hl_groups)
+  for _, hl in ipairs(hl_groups) do
     vim.api.nvim_set_hl(0, hl.name, { fg = hl.fg, bg = hl.bg })
   end
 end

@@ -28,14 +28,7 @@ _TableauConfig = _TableauConfig or {
       bg = "#24273a",
     },
   },
-  hidden_buffer_types = {
-    "NeogitStatus",
-    "NeogitPopup",
-    "NeogitCommitMessage",
-    "nofile",
-    "prompt",
-    "TelescopePrompt",
-  }
+  hidden_buffer_types = {}
 }
 
 M.current = function()
@@ -43,7 +36,9 @@ M.current = function()
 end
 
 M.load = function(new_config)
-  _TableauConfig = new_config
+  for k, v in pairs(new_config) do
+    _TableauConfig[k] = v
+  end
 end
 
 return M
