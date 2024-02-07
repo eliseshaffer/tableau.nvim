@@ -1,11 +1,11 @@
 <div align="center">
-  
+
 # tableau.nvim
-An opinionated tabline plugin for Neovim  
+An opinionated tabline plugin for Neovim
 
 </div>
 
-> ⚠️ Tableau.nvim is very experimental. It currently doesn't have any configuration and the features and API are subject to frequent changes. 
+> ⚠️ Tableau.nvim is very experimental. It currently has limited configuration and the features and API are subject to frequent changes and breakages. 
 
 ## Purpose
 Unlike other tabline plugins, which try to replace the tabline functionality entirely, Tableau tries to improve upon the built-in tab functionality. It's mainly an attempt to optimize my personal workflow.
@@ -25,9 +25,42 @@ Using lazy:
   {
     "eliseshaffer/tableau.nvim",
     config = function()
-      require('tableau').setup({})
+      require('tableau').setup()
     end,
   },
+```
+
+## Configuration
+Tableau.nvim supports the following configuration options:
+```lua
+  hl_groups = { -- highlight groups for each segment
+    {
+      name = "TableauBackground",
+      fg = "#24273a",
+      bg = "#24273a"
+    },
+    {
+      name = "TableauCurrentInactive",
+      fg = "#24273a",
+      bg = "#d0b0ff"
+    },
+    {
+      name = "TableauCurrentActive",
+      fg = "#24273a",
+      bg = "#b690d6",
+    },
+    {
+      name = "TableauOtherInactive",
+      fg = "#d0b0ff",
+      bg = "#24273a",
+    },
+    {
+      name = "TableauOtherActive",
+      fg = "#b690d6",
+      bg = "#24273a",
+    },
+  },
+  hidden_buffer_types = {} -- buffer types that you want to hide from the tabline
 ```
 
 ## Contributing
