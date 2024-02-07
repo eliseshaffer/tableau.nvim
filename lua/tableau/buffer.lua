@@ -25,7 +25,7 @@ function Buffer:new(tab_id, win_id)
 end
 
 function Buffer:render()
-  return self.hl .. ' ' .. self.name .. ' '
+  return self.hl .. ' ' .. utils.render_icon(self.name) .. ' ' .. self.name .. ' '
 end
 
 return Buffer
