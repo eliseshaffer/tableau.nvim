@@ -1,8 +1,6 @@
 local M = {}
 
-local Current = {}
-
-M.default = {
+_TableauConfig = _TableauConfig or {
   hl_groups = {
     {
       name = "TableauBackground",
@@ -41,11 +39,11 @@ M.default = {
 }
 
 M.current = function()
-  return M.default
+  return _TableauConfig
 end
 
-M.load = function(config)
-  Current = config
+M.load = function(new_config)
+  _TableauConfig = new_config
 end
 
 return M
