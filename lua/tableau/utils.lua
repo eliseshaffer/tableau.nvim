@@ -1,4 +1,5 @@
 local Config = require('tableau.config')
+local devicons = require("nvim-web-devicons")
 local utils = {}
 
 utils.has_key = function(ft, buftype)
@@ -15,7 +16,8 @@ utils.render_icon = function(bufname)
   local extension = vim.fn.fnamemodify(bufname, ":e")
   local icon, hl = devicons.get_icon(bufname, extension, { default = true })
 
-  return "%#" .. hl .. "#" .. icon
+  -- return "%#" .. hl .. "#" .. icon
+  return icon
 end
 
 utils.create_highlight_groups = function(hl_groups)
