@@ -38,12 +38,9 @@ utils.get_highlight_group_for_tab = function(tab_id)
 end
 
 utils.get_highlight_group_for_win = function(tab_id, win_id)
-  local buf           = vim.api.nvim_win_get_buf(win_id)
   local current_tab   = vim.api.nvim_get_current_tabpage()
   local active_on_tab = vim.api.nvim_tabpage_get_win(tab_id)
   local current_buf   = vim.api.nvim_get_current_win()
-  local ft            = vim.api.nvim_buf_get_option(buf, "ft")
-  local buftype       = vim.api.nvim_buf_get_option(buf, "buftype")
   local hl            = ""
 
   if win_id == current_buf then
