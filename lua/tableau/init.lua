@@ -5,7 +5,6 @@
 -- FIX: fix devicons integration
 -- TODO: Handle buffer clicks transitioning focus within a tab
 -- TODO: collapse init.lua filenames
--- FIX: highlight for OtherActive not working
 -- FIX: highlight group defs on colorscheme change
 
 local devicons = require("nvim-web-devicons")

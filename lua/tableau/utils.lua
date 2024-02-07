@@ -40,17 +40,21 @@ end
 utils.get_highlight_group_for_win = function(tab_id, win_id)
   local current_tab   = vim.api.nvim_get_current_tabpage()
   local active_on_tab = vim.api.nvim_tabpage_get_win(tab_id)
-  local current_buf   = vim.api.nvim_get_current_win()
+  local current_win   = vim.api.nvim_get_current_win()
   local hl            = ""
 
-  if win_id == current_buf then
-    hl = "%#TableauCurrentActive#"
-  elseif win_id ~= current_buf and tab_id == current_tab then
-    hl = "%#TableauCurrentInactive#"
-  elseif tab_id ~= current_tab and win_id == win_id ~= current_buf then
-    hl = "%#TableauOtherInactive#"
-  elseif win_id == active_on_tab then
-    hl = "%#TableauOtherActive#*"
+  if tab_id == current_tab then
+    if win_id == current_win then
+      hl = "%#TableauCurrentActive#"
+    else
+      hl = "%#TableauCurrentInactive#"
+    end
+  else
+    if win_id == active_on_tab then
+      hl = "%#TableauOtherActive#"
+    else
+      hl = "%#TableauOtherInactive#"
+    end
   end
 
   return hl
