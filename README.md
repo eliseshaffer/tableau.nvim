@@ -5,7 +5,7 @@ An opinionated tabline plugin for Neovim
 
 </div>
 
-> ⚠️ Tableau.nvim is very experimental. It currently has limited configuration and the features and API are subject to frequent changes and breakages. 
+> ⚠️ Tableau.nvim is very experimental. It currently has limited configuration and the features and API are subject to frequent and breaking changes.
 
 ## Purpose
 Unlike other tabline plugins, which try to replace the tabline functionality entirely, Tableau tries to improve upon the built-in tab functionality. It's mainly an attempt to optimize my personal workflow.
@@ -15,7 +15,7 @@ It is not trying to be the ultimate tabline plugin. Here's a list of the primary
 1. Displays all the tabs in order with all the open windows in each tab
 2. Highlights the active windows in each tab
 3. Preserve vim tab movement commands
-4. Supports hidding windows based on filetype 
+4. Supports hiding windows based on filetype and buftype 
 5. Supports devicons
 6. Supports custom themes
 
