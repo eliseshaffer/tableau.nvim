@@ -1,20 +1,20 @@
 local M = {}
 
-function M.dump(o)
+function M.dump(o, pre)
    if type(o) == 'table' then
-      local s = '{ '
+      local s = '{ \n' .. pre
       for k,v in pairs(o) do
          if type(k) ~= 'number' then k = '"'..k..'"' end
-         s = s .. '['..k..'] = ' .. M.dump(v) .. ','
+         s = s .. '['..k..'] = ' .. M.dump(v, pre .. '  ') .. ',\n' .. pre
       end
-      return s .. '} '
+      return s .. '}'
    else
-      return tostring(o)
+      return tostring(o) .. ','
    end
 end
 
 function M.print_table(t)
-   print(M.dump(t))
+   print(M.dump(t, '  '))
 end
 
 return M
