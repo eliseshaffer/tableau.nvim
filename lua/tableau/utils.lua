@@ -19,14 +19,15 @@ utils.render_icon = function(bufname)
 end
 
 utils.create_highlight_groups = function(hl_groups)
-  for _, hl in ipairs(hl_groups) do
+  local n_hl_groups = utils.get_hl_config_for_current_colorscheme()
+  for _, hl in pairs(n_hl_groups) do
     vim.api.nvim_set_hl(0, hl.name, { fg = hl.fg, bg = hl.bg })
   end
 end
 
 utils.get_highlight_group_for_tab = function(tab_id)
-  local current_tab   = vim.api.nvim_get_current_tabpage()
-  local hl            = ""
+  local current_tab = vim.api.nvim_get_current_tabpage()
+  local hl          = ""
 
   if tab_id == current_tab then
     hl = "%#TableauCurrentInactive#"
@@ -58,6 +59,68 @@ utils.get_highlight_group_for_win = function(tab_id, win_id)
   end
 
   return hl
+end
+
+utils.get_hl_config_for_current_colorscheme = function()
+  local colorscheme_hl = {
+    ["catppuccin-macchiato"] = {
+      {
+        name = "TableauBackground",
+        fg = "#24273a",
+        bg = "#24273a"
+      },
+      {
+        name = "TableauCurrentInactive",
+        fg = "#24273a",
+        bg = "#d0b0ff"
+      },
+      {
+        name = "TableauCurrentActive",
+        fg = "#24273a",
+        bg = "#b690d6",
+      },
+      {
+        name = "TableauOtherInactive",
+        fg = "#d0b0ff",
+        bg = "#24273a",
+      },
+      {
+        name = "TableauOtherActive",
+        fg = "#b690d6",
+        bg = "#24273a",
+      },
+    },
+    ["catppuccin-latte"] = {
+      {
+        name = "TableauBackground",
+        fg = "#eff1f5",
+        bg = "#eff1f5"
+      },
+      {
+        name = "TableauCurrentInactive",
+        fg = "#24273a",
+        bg = "#d0b0ff"
+      },
+      {
+        name = "TableauCurrentActive",
+        fg = "#24273a",
+        bg = "#b690d6",
+      },
+      {
+        name = "TableauOtherInactive",
+        fg = "#d0b0ff",
+        bg = "#24273a",
+      },
+      {
+        name = "TableauOtherActive",
+        fg = "#b690d6",
+        bg = "#24273a",
+      },
+    },
+  }
+  local current_colorscheme = vim.g.colors_name
+
+  return colorscheme_hl[current_colorscheme]
 end
 
 return utils

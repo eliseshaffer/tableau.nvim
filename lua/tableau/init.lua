@@ -1,11 +1,8 @@
 -- TODO: Add configuration to setup
 -- TODO: Clean up global render function scope; maybe this is not possible?
 -- TODO: Add expression matching to hidden buffers
--- FIX: Fix focused window when that window is hidden
--- FIX: fix devicons integration
 -- TODO: Handle buffer clicks transitioning focus within a tab
 -- TODO: collapse init.lua filenames
--- FIX: highlight group defs on colorscheme change
 
 local devicons = require("nvim-web-devicons")
 local M = {}
@@ -30,6 +27,15 @@ M.setup = function(config)
   Config.load(config)
   utils.create_highlight_groups(Config.current().hl_groups)
   vim.o.tabline = "%!v:lua.render_tableau()"
+
+  vim.api.nvim_create_autocmd({ "ColorScheme" }, {
+    pattern = "*",
+    command = "lua require('tableau').reset_colors()"
+  })
+end
+
+M.reset_colors = function()
+  utils.create_highlight_groups(Config.current().hl_groups)
 end
 
 function _G.render_tableau()
