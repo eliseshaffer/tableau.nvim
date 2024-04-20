@@ -82,12 +82,12 @@ utils.get_hl_config_for_current_colorscheme = function()
       {
         name = "TableauOtherInactive",
         fg = "#d0b0ff",
-        bg = "#24273a",
+        bg = "#363a4f",
       },
       {
         name = "TableauOtherActive",
-        fg = "#b690d6",
-        bg = "#24273a",
+        fg = "#a576cc",
+        bg = "#363a4f",
       },
     },
     ["catppuccin-latte"] = {
@@ -98,23 +98,23 @@ utils.get_hl_config_for_current_colorscheme = function()
       },
       {
         name = "TableauCurrentInactive",
-        fg = "#24273a",
-        bg = "#d0b0ff"
+        fg = "#eff1f5",
+        bg = "#78a3f9",
       },
       {
         name = "TableauCurrentActive",
-        fg = "#24273a",
-        bg = "#b690d6",
+        fg = "#eff1f5",
+        bg = "#1e66f5",
       },
       {
         name = "TableauOtherInactive",
-        fg = "#d0b0ff",
-        bg = "#24273a",
+        fg = "#78a3f9",
+        bg = "#ccd0da",
       },
       {
         name = "TableauOtherActive",
-        fg = "#b690d6",
-        bg = "#24273a",
+        fg = "#1e66f5",
+        bg = "#ccd0da",
       },
     },
   }
