@@ -99,7 +99,7 @@ utils.get_hl_config_for_current_colorscheme = function()
       {
         name = "TableauCurrentInactive",
         fg = "#eff1f5",
-        bg = "#78a3f9",
+        bg = "#558bf7",
       },
       {
         name = "TableauCurrentActive",
