@@ -4,7 +4,6 @@
 -- TODO: Handle buffer clicks transitioning focus within a tab
 -- TODO: collapse init.lua filenames
 
-local devicons = require("nvim-web-devicons")
 local M = {}
 local Tab = require('tableau.tab')
 local Config = require('tableau.config')
