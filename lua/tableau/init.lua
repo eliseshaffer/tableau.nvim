@@ -16,7 +16,7 @@ local function set_tabline()
 
   for _, tab_id in ipairs(tabpages) do
     local tab = Tab:new(tab_id)
-    tab:add_buffers()
+    tab:add_windows()
     tabline = tabline .. "" .. tab:render() .. "%#TableauBackground#"
   end
 
