@@ -19,7 +19,7 @@ utils.render_icon = function(bufname)
   return "%#" .. hl .. "#" .. icon
 end
 
-utils.create_highlight_groups = function(hl_groups)
+utils.create_highlight_groups = function()
   local n_hl_groups = utils.get_hl_config_for_current_colorscheme()
   for _, hl in pairs(n_hl_groups) do
     vim.api.nvim_set_hl(0, hl.name, { fg = hl.fg, bg = hl.bg })

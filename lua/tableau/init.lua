@@ -34,7 +34,7 @@ M.setup = function(config)
 end
 
 M.reset_colors = function()
-  utils.create_highlight_groups(Config.current().hl_groups)
+  utils.create_highlight_groups()
 end
 
 function _G.render_tableau()
