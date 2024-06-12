@@ -24,7 +24,7 @@ end
 
 M.setup = function(config)
   Config.load(config)
-  utils.create_highlight_groups(Config.current().hl_groups)
+  utils.create_highlight_groups()
   vim.o.tabline = "%!v:lua.render_tableau()"
 
   vim.api.nvim_create_autocmd({ "ColorScheme" }, {
